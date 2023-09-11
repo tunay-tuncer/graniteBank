@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --textWhite: #ffffff;
+    --textGrey: #767678;
+    --accent1: #1A667A;
+    --accent2: #307587;
+    --backgroundBlack: #121213;
+    --containerBlack: #1A1A1E;
+    --lightGray: #252529;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins" ,sans-serif;
+}
+
+body{
+    height: 100vh;
+    background: var(--backgroundBlack);
+    display: flex;
+}
+
+
+/* NAV CONFIGURATION */
+
+nav{
+    height: 100%;
+    padding: 3rem 1.5rem;
+    width: 19rem;
+    background: var(--containerBlack);
+    color: var(--textGrey);
+    position: relative;
+}
+
+.logoDiv{
+    display: flex;
+    width: 100%;
+    color: var(--textWhite);
+}
+
+.logoDiv i{
+    font-size: 2rem;
+}
+
+.logoDiv h1{
+    margin-left: 1rem;
+}
+
+nav ul{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.others{
+    margin-top: 2rem;
+}
+
+.navItem{
+    margin-top: 0.5rem;
+    display: flex;
+    width: 100%;
+    height: 3rem;
+    align-items: center;
+    border-radius: 0.4rem;
+    padding-inline: 0.5rem;
+    cursor: pointer;
+}
+
+.navItem:hover{
+    background-color: var(--accent1);
+    color: var(--textWhite);
+}
+
+.navItem p{
+    font-weight: 700;
+    margin-left: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.navItem i{
+    font-size: 1rem;
+}
+
+.dashboard{
+    color: var(--textWhite);
+    background: var(--accent1);
+}
+
+.seperator{
+    margin-left: 0.5rem;
+    font-size: 0.75rem;
+}
+
+footer{
+    width: calc(100% - 3rem);
+    position: absolute;
+    bottom: 2rem;
+}
+
+.copyRight{
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+    color: var(--textWhite);
+} 
+
+.copyRight h3{
+    margin-left: 1rem;
+}
+
+footer p{
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+}
+
+@media (max-width: 1445px){
+    html{
+        font-size: 15px;
+    }
+    .logoDiv span{
+        display: none;
+    }
+}
+
+@media (max-width: 1024px){
+    nav{
+        width: 5rem;
+    }
+    .navItem p{
+        display: none;
+    }
+    .logoDiv h1{
+        display: none;
+    }
+    
+    .seperator{
+        display: none;
+    }
+
+    footer{
+        display: none;
+    }
+}
+
+@media (max-width: 425px) {
+    html{
+        font-size: 12px;
+    }
+}
+
+/* NAV CONFIGURATION */
+
+/* MAIN CONFIGURATION */
+/* WELCOM DIV CONFIGURATION */
+
+.main{
+    width: 100%;
+    height: 100%;
+    padding: 3rem 2rem;
+}
+
+.welcomeDiv{
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.welcomeTextDiv h1{
+    color: var(--textWhite);
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.welcomeTextDiv span{
+    color: var(--accent1);
+    font-weight: 600;
+}
+
+.welcomeDiv h3{
+    color: var(--textGrey);
+    font-weight: 400;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.rightDiv{
+    display: flex;
+    gap: 1rem;
+}
+
+.rightDiv i{
+    height: 100%;
+    aspect-ratio: 1;
+    border-radius: 0.75rem;
+    background-color: var(--containerBlack);
+    color: var(--textWhite);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+    z-index: 2;
+}
+
+.rightDiv i:hover{
+    background: var(--accent1);
+}
+
+#themeButton:hover{
+    color: yellow;
+}
+
+#notificationButton{
+    position: relative;
+}
+
+#notificationButton::after{
+    content: "2";
+    display: block;
+    position: absolute;
+    width: 0.9rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: red;
+    font-size: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    top: 15%;
+    right: 15%;
+    transform: translate(-50% -50%);
+}
+
+/* DEBİT CARD CONFIGURATION */
+
+.containers{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.debitCardContainer{
+    background: var(--containerBlack);
+    border-radius: 2rem;
+    color: var(--textWhite);
+    padding: 1rem;
+    padding-bottom: 2rem;
+    height: fit-content;
+}
+
+.containerHeading{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.cards{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cardFrontFace{
+    width: 22rem;
+    height: 13rem;
+    border-radius: 1.5rem;
+    background: var(--accent1);
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.cardFrontFace:hover{
+    scale: 1.02;
+}
+
+.cardFrontFace::after{
+    content: "";
+    position: absolute;
+    width: 17rem;
+    aspect-ratio: 1;
+    display: block;
+    background: var(--accent2);
+    border-radius: 50%;
+    right: -25%;
+    z-index: -1;
+}
+
+.top{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+}
+
+.platinumText{
+    font-weight: 600;
+}
+
+#chipImg{
+    width: 2.5rem;
+}
+
+.cardNumber{
+    font-size: 1.2rem;
+}
+
+.bottom{
+    width: 100%;
+    display: flex;
+    align-items: end;
+    font-size: 0.5rem;
+    justify-content: space-between;
+}
+
+#visaImg{
+    height: 1rem;
+}
+
+.addCard{
+    width: 10rem;
+    aspect-ratio: 1;
+    padding: 1rem 0 1rem 0;
+    background: var(--lightGray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 1.5rem;
+}
+
+.addCard i{
+    width: 5rem;
+    aspect-ratio: 1;
+    background: var(--containerBlack);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+}
+
+.addCard p{
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* BALANCE CONFIGURATION */
+
+.totalBalanceContainer{
+    background: var(--containerBlack);
+    border-radius: 2rem;
+    color: var(--textWhite);
+    padding: 1rem;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+}
+
+.dateDiv{
+    width: 15rem;
+    display: flex;
+    justify-content: space-around;
+    color: var(--textGrey);
+    font-size: 0.75rem;
+}
+
+.buttonsDiv{
+    margin-top: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 1.5rem;
+    background: var(--lightGray);
+    border-radius: 1rem;
+}
+
+.balanceButton{
+    width: 4rem;
+    aspect-ratio: 1;
+    padding: 0.75rem;
+    background: var(--containerBlack);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.balanceButton:hover{
+    color: var(--accent1);
+}
+
+.balanceButton p{
+    font-size: 0.75rem;
+}
