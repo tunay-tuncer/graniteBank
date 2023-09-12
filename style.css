@@ -8,6 +8,11 @@
     --backgroundBlack: #121213;
     --containerBlack: #1A1A1E;
     --lightGray: #252529;
+
+    --orange: #f69679;
+    --yellow : #fff799;
+    --purple: #8781bd;
+    --pink : #f49ac1;
 }
 
 *{
@@ -177,8 +182,8 @@ footer p{
 }
 
 .welcomeTextDiv span{
-    color: var(--accent1);
-    font-weight: 600;
+    color: var(--accent2);
+    font-weight: 700;
 }
 
 .welcomeDiv h3{
@@ -242,16 +247,17 @@ footer p{
 
 .containers{
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     display: grid;
     grid-template-columns: 3fr 2fr;
+    grid-template-rows: 1fr 1fr;
     gap: 2rem;
     margin-top: 2rem;
 }
 
 .debitCardContainer{
     background: var(--containerBlack);
-    border-radius: 2rem;
+    border-radius: 1rem;
     color: var(--textWhite);
     padding: 1rem;
     padding-bottom: 2rem;
@@ -273,7 +279,7 @@ footer p{
 .cardFrontFace{
     width: 22rem;
     height: 13rem;
-    border-radius: 1.5rem;
+    border-radius: 1rem;
     background: var(--accent1);
     padding: 0.5rem 1.5rem;
     display: flex;
@@ -343,6 +349,13 @@ footer p{
     align-items: center;
     justify-content: space-around;
     border-radius: 1.5rem;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.addCard:hover{
+    scale: 0.95;
+    color: var(--accent2);
 }
 
 .addCard i{
@@ -365,7 +378,7 @@ footer p{
 
 .totalBalanceContainer{
     background: var(--containerBlack);
-    border-radius: 2rem;
+    border-radius: 1rem;
     color: var(--textWhite);
     padding: 1rem;
     height: fit-content;
@@ -409,9 +422,136 @@ footer p{
 }
 
 .balanceButton:hover{
-    color: var(--accent1);
+    color: var(--accent2);
+    scale: 0.95;
 }
 
 .balanceButton p{
     font-size: 0.75rem;
+}
+
+/* TRANSACTION CONFIGURATION */
+
+.recentTransactionsDiv{
+    background: var(--containerBlack);
+    border-radius: 1rem;
+    color: var(--textWhite);
+    padding: 1rem;
+    padding-bottom: 2rem;
+    /* height: fit-content; */
+}
+
+.transactions{
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.transactionsUl{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.transaction{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.transactionRight{
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+}
+
+.transactionRight i{
+    width: 3.5rem;
+    aspect-ratio: 1;
+    background: var(--accent1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.transactionDescription{
+    margin-left: 1rem;
+    height: 100%;
+    justify-content: space-between;
+    font-size: 1rem;
+
+}
+
+.transactionDescription p{
+    color: var(--textGrey);
+    font-size: 0.75rem;
+}
+
+.transactionCatagorie{
+    width: 10rem;
+    justify-content: space-around;
+    display: flex;
+    font-size: 0.75rem;
+}
+
+.transactionCatagorie i{
+    font-size: 1rem;
+}
+
+.transactionCatagorie p{
+    margin-left: 1rem;
+}
+
+#red{
+    background: rgb(226, 42, 42);
+}
+#orange{
+    background: orange;
+}
+
+.expense{
+    color: var(--textGrey);
+}
+
+
+/* MONHTLY EXPENSE CONFIGURATION */
+
+.monthlyExpenseDiv{
+    background: var(--containerBlack);
+    border-radius: 1rem;
+    color: var(--textWhite);
+    padding: 1rem;
+    padding-bottom: 2rem;
+    /* height: fit-content; */
+}
+
+.graphContentDiv{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.graph{
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.expensePercentage{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.legendUl{
+    font-size: 0.75rem;
+}
+
+.apexcharts-legend {
+    content: "";
 }
