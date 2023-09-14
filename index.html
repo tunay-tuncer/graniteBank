@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+    <script defer src="theme+chart.js"></script>
 </head>
 <body>
     <nav>
@@ -91,24 +91,67 @@
                 <h1 class="containerHeading">Debit Card Account</h1>
                 <div class="cards">
 
-                    <div class="cardFrontFace">
-
-                        <div class="top">
-                            <p>Granite Card</p>
-                            <p class="platinumText">Platinum Debit</p>
+                    <div class="platinumContainer">
+                        <div class="cardFrontFace platinum cardTop">
+    
+                            <div class="top">
+                                <p>Granite Card</p>
+                                <p class="platinumText">Platinum Debit</p>
+                            </div>
+    
+                            <div class="chip">
+                                <img id="chipImg" src="images/cardChip.png" alt="">
+                            </div>
+    
+                            <h1 class="cardNumber">1234 5678 9012 3456</h1>
+    
+                            <div class="bottom">
+                                <p>Valid Thru <span>09/25</span></p>
+                                <img id="visaImg" src="images/visa.png" alt="">
+                            </div>
                         </div>
-
-                        <div class="chip">
-                            <img id="chipImg" src="images/cardChip.png" alt="">
-                        </div>
-
-                        <h1 class="cardNumber">1234 5678 9012 3456</h1>   
-                        
-                        <div class="bottom">
-                            <p>Valid Thru <span>09/25</span></p>
-                            <img id="visaImg" src="images/visa.png" alt="">
+                        <div class="cardFrontFace platinum cardBottom">
+    
+                            <div class="top">
+                                <p>Granite Card</p>
+                                <p class="platinumText">Platinum Debit</p>
+                            </div>
+    
+                            <div class="chip">
+                                <img id="chipImg" src="images/cardChip.png" alt="">
+                            </div>
+    
+                            <h1 class="cardNumber">1234 5678 9012 3456</h1>
+    
+                            <div class="bottom">
+                                <p>Valid Thru <span>09/25</span></p>
+                                <img id="visaImg" src="images/visa.png" alt="">
+                            </div>
                         </div>
                     </div>
+
+                    <div class="goldContainer">
+                        <div class="cardFrontFace gold">
+    
+                            <div class="top">
+                                <p>Granite Card</p>
+                                <p class="platinumText">Gold Debit</p>
+                            </div>
+    
+                            <div class="chip">
+                                <img id="chipImg" src="images/cardChip.png" alt="">
+                            </div>
+    
+                            <h1 class="cardNumber">1234 5678 9012 3456</h1>
+    
+                            <div class="bottom">
+                                <p>Valid Thru <span>09/25</span></p>
+                                <img id="visaImg" src="images/visa.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+
 
                     <div class="addCard">
                         <i class="fa-solid fa-circle-plus"></i>
@@ -157,7 +200,7 @@
 
                         <div class="transaction">
 
-                            <div class="transactionRight">
+                            <div class="transactionLeft">
                                 <i class="fa-brands fa-paypal"></i>
                                 <div class="transactionDescription">
                                     <h3 class="transactionCompanyName">Paypal</h3>
@@ -176,7 +219,7 @@
 
                         <div class="transaction">
 
-                            <div class="transactionRight">
+                            <div class="transactionLeft">
                                 <i id="red" class="fa-brands fa-youtube"></i>
                                 <div class="transactionDescription">
                                     <h3 class="transactionCompanyName">YouTube</h3>
@@ -195,7 +238,7 @@
 
                         <div class="transaction">
 
-                            <div class="transactionRight">
+                            <div class="transactionLeft">
                                 <i id="orange" class="fa-brands fa-etsy"></i>
                                 <div class="transactionDescription">
                                     <h3 class="transactionCompanyName">Esty</h3>

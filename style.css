@@ -9,7 +9,8 @@
     --containerBlack: #1A1A1E;
     --lightGray: #252529;
 
-    --orange: #f69679;
+    --orange: #FFB41F;
+    --orange2: #F5A300;
     --yellow : #fff799;
     --purple: #8781bd;
     --pink : #f49ac1;
@@ -20,12 +21,26 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Poppins" ,sans-serif;
+    ::-webkit-scrollbar {
+        width: 8px;
+      }
+    
+      *::-webkit-scrollbar-track {
+        background: transparent;
+      }
+    
+      *::-webkit-scrollbar-thumb {
+        background-color: var(--accent1);
+        border-radius: 3px;
+        border: 2px none #ffffff;
+    }
 }
 
 body{
     height: 100vh;
     background: var(--backgroundBlack);
     display: flex;
+    transition: 0.4s ease;
 }
 
 
@@ -166,6 +181,7 @@ footer p{
     width: 100%;
     height: 100%;
     padding: 3rem 2rem;
+    overflow-y: scroll;
 }
 
 .welcomeDiv{
@@ -272,15 +288,15 @@ footer p{
 .cards{
     margin-top: 1rem;
     display: flex;
-    align-items: center;
     justify-content: space-between;
 }
 
 .cardFrontFace{
+    color: white;
     width: 22rem;
     height: 13rem;
     border-radius: 1rem;
-    background: var(--accent1);
+   
     padding: 0.5rem 1.5rem;
     display: flex;
     flex-direction: column;
@@ -292,11 +308,11 @@ footer p{
     transition: 0.3s ease;
 }
 
-.cardFrontFace:hover{
-    scale: 1.02;
+.platinum{
+    background: var(--accent1);
 }
 
-.cardFrontFace::after{
+.platinum::after{
     content: "";
     position: absolute;
     width: 17rem;
@@ -307,6 +323,44 @@ footer p{
     right: -25%;
     z-index: -1;
 }
+
+.gold{
+    background: var(--orange2);
+}
+
+.gold::after{
+    content: "";
+    position: absolute;
+    width: 17rem;
+    aspect-ratio: 1;
+    display: block;
+    background: var(--orange);
+    border-radius: 50%;
+    right: -25%;
+    z-index: -1;
+}
+
+.cardFrontFace:hover{
+    scale: 1.02;
+}
+
+
+.cardBottom{
+    z-index: 2;
+}
+
+.cardBottom{
+    z-index: 1;
+    height: 0;
+    opacity: 0;
+}
+
+.platinumContainer:hover > .cardBottom{
+    transform: translateY(1rem);
+    height: 13rem;
+    opacity: 1;
+}
+
 
 .top{
     width: 100%;
@@ -341,7 +395,7 @@ footer p{
 
 .addCard{
     width: 10rem;
-    aspect-ratio: 1;
+   height: 10rem;
     padding: 1rem 0 1rem 0;
     background: var(--lightGray);
     display: flex;
@@ -458,17 +512,18 @@ footer p{
     justify-content: space-between;
 }
 
-.transactionRight{
+.transactionLeft{
     display: flex;
     align-items: center;
     height: 100%;
 
 }
 
-.transactionRight i{
+.transactionLeft i{
     width: 3.5rem;
     aspect-ratio: 1;
     background: var(--accent1);
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -552,6 +607,6 @@ footer p{
     font-size: 0.75rem;
 }
 
-.apexcharts-legend {
-    content: "";
+.apexcharts-legend-text {
+    color: red;
 }
