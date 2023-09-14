@@ -1,7 +1,10 @@
 const themeButton = document.querySelector("#themeButton");
 const root = document.querySelector(':root');
 
-
+const cards = document.querySelector(".cards")
+const platinumContainer = document.querySelector(".platinumContainer")
+const goldContainer = document.querySelector(".goldContainer")
+const addCardButton = document.querySelector(".addCard")
 
 const colors = {
     textLight: "#121F3E",
@@ -16,6 +19,9 @@ const colors = {
     backgroundBlack: "#121213",
     containerBlack: "#1A1A1E",
     lightGray: "#252529",
+
+	orange: "#FFB41F",
+    orange2: "#F5A300"
 }
 
 
@@ -111,10 +117,132 @@ var options = {
   }
 }
 
+const cardType = "gold"
+function createCard(){
+	if(cardType == "gold"){
+
+		//Top
+		const topDiv = document.createElement("div");
+		topDiv.classList.add("top")
+
+		const graniteCardText = document.createElement("p");
+		graniteCardText.textContent = "Granite Card";
+
+		const cardTypeText = document.createElement("p");
+		cardTypeText.classList.add("cardTypeText")
+		cardTypeText.textContent = "Gold Debit";
+
+		topDiv.appendChild(graniteCardText);
+		topDiv.appendChild(cardTypeText);
+
+		//Chip
+		const chipDiv = document.createElement("div");
+		const chipImg = document.createElement("img");
+		chipImg.setAttribute("id", "chipImg");
+		chipImg.src = "images/cardChip.png"
+
+		chipDiv.appendChild(chipImg);
+
+		//CardNumber
+		const cardNumber = document.createElement("h1");
+		cardNumber.classList.add("cardNumber");
+		cardNumber.textContent = "9876 5432 1098 7654";
+
+		//Bottom
+		const bottomDiv = document.createElement("div");
+		bottomDiv.classList.add("bottom");
+
+		const validationText = document.createElement("p");
+		validationText.textContent = "Valid Thru 09/25";
+
+		const visaImg = document.createElement("img");
+		visaImg.setAttribute("id", "visaImg");
+		visaImg.src = "images/visa.png";
+
+		bottomDiv.appendChild(validationText);
+		bottomDiv.appendChild(visaImg)
+
+		//Combining Everything
+		const newCard = document.createElement("div");
+		newCard.classList.add("cardFrontFace");
+		newCard.classList.add("gold");
+		newCard.classList.add("cardBottom");
+
+		newCard.appendChild(topDiv);
+		newCard.appendChild(chipDiv);
+		newCard.appendChild(cardNumber);
+		newCard.appendChild(bottomDiv);
+
+		goldContainer.appendChild(newCard)
+
+	}
+	else if(cardType == "platinum"){
+		//Top
+		const topDiv = document.createElement("div");
+		topDiv.classList.add("top")
+
+		const graniteCardText = document.createElement("p");
+		graniteCardText.textContent = "Granite Card";
+
+		const cardTypeText = document.createElement("p");
+		cardTypeText.classList.add("cardTypeText")
+		cardTypeText.textContent = "Gold Debit";
+
+		topDiv.appendChild(graniteCardText);
+		topDiv.appendChild(cardTypeText);
+
+		//Chip
+		const chipDiv = document.createElement("div");
+		const chipImg = document.createElement("img");
+		chipImg.setAttribute("id", "chipImg");
+		chipImg.src = "images/cardChip.png"
+
+		chipDiv.appendChild(chipImg);
+
+		//CardNumber
+		const cardNumber = document.createElement("h1");
+		cardNumber.classList.add("cardNumber");
+		cardNumber.textContent = "9876 5432 1098 7654";
+
+		//Bottom
+		const bottomDiv = document.createElement("div");
+		bottomDiv.classList.add("bottom");
+
+		const validationText = document.createElement("p");
+		validationText.textContent = "Valid Thru 09/25";
+
+		const visaImg = document.createElement("img");
+		visaImg.setAttribute("id", "visaImg");
+		visaImg.src = "images/visa.png";
+
+		bottomDiv.appendChild(validationText);
+		bottomDiv.appendChild(visaImg)
+
+		//Combining Everything
+		const newCard = document.createElement("div");
+		newCard.classList.add("cardFrontFace");
+		newCard.classList.add("gold");
+		newCard.classList.add("cardBottom");
+
+		newCard.appendChild(topDiv);
+		newCard.appendChild(chipDiv);
+		newCard.appendChild(cardNumber);
+		newCard.appendChild(bottomDiv);
+
+		goldContainer.appendChild(newCard)
+	}
+}
+
+let platinumCardCount = platinumContainer.childElementCount
+let goldContainerCardCount = goldContainer.childElementCount
+function addCardFunc(){
+	createCard()
+}
+
 
 
 var chart = new ApexCharts(document.querySelector("#chart"), options);
 chart.render();
 
-
 themeButton.addEventListener("click", switchTheme)
+addCardButton.addEventListener("click", addCardFunc)
