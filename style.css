@@ -378,11 +378,6 @@ footer p{
     opacity: 1;
 
 }
-/* .platinumContainer:hover > .cardBottom{
-    transform: translateY(1rem);
-    height: 13rem;
-    opacity: 1;
-} */
 
 
 .top{
@@ -627,10 +622,79 @@ footer p{
     left: 50%;
 }
 
-.legendUl{
+
+.alertDiv{
+    position: absolute;
+    width: 30rem;
+    height: 0;
+    top: 0;
+    left: 50%;
+    transform: translateX(-30%);
+    border-radius: 0 0 1rem 1rem;
+    background: var(--containerBlack);
+    color: var(--accent1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+    font-size: 1rem;
+    cursor: default;
+    transition: 0.5s ease;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.alertContent{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.alertTimerBar{
+    width: 100%;
+    height: 4px;
+    background: var(--accent1);
+    /* animation: alertBar 5s; */
+    transform-origin: left;
+}
+
+
+@keyframes alertBar{
+    from{
+        transform: scaleX(1);
+    }
+    to{
+        transform: scaleX(0);
+    }
+}
+
+
+.alertDiv p{
+    color: var(--textWhite);
     font-size: 0.75rem;
 }
 
-.apexcharts-legend-text {
-    color: red;
+.alertTextDiv{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#exclamation, #closeNotification{
+    width: 2.5rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#closeNotification{
+    cursor: pointer;
+}
+
+#closeNotification:hover{
+    background: var(--lightGray);
 }

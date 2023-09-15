@@ -1,10 +1,15 @@
 const themeButton = document.querySelector("#themeButton");
 const root = document.querySelector(':root');
 
-const cards = document.querySelector(".cards")
-const platinumContainer = document.querySelector(".platinumContainer")
-const goldContainer = document.querySelector(".goldContainer")
-const addCardButton = document.querySelector(".addCard")
+const cards = document.querySelector(".cards");
+const platinumContainer = document.querySelector(".platinumContainer");
+const goldContainer = document.querySelector(".goldContainer");
+const addCardButton = document.querySelector(".addCard");
+
+const alertDiv = document.querySelector(".alertDiv");
+const closeNotification = document.querySelector("#closeNotification");
+const alertTimerBar = document.querySelector(".alertTimerBar");
+
 
 const colors = {
     textLight: "#121F3E",
@@ -237,12 +242,32 @@ let platinumCardCount = platinumContainer.childElementCount
 let goldContainerCardCount = goldContainer.childElementCount
 function addCardFunc(){
 	createCard()
+  alert()
 }
 
+function alert(){
+  alertDiv.style.height = "6rem";
+  alertDiv.style.opacity = "1";
+  alertTimer()
+}
 
+function closeAlert(){
+  alertDiv.style.height = "0";
+  alertDiv.style.opacity= "0";
+  alertTimerBar.style.animation = ""
+}
+
+function alertTimer(){
+  let alertTimerBarWidth  = alertTimerBar.offsetWidth;
+  alertTimerBar.style.animation = "alertBar 4s"
+  setTimeout(closeAlert, 3000);
+}
 
 var chart = new ApexCharts(document.querySelector("#chart"), options);
 chart.render();
 
 themeButton.addEventListener("click", switchTheme)
 addCardButton.addEventListener("click", addCardFunc)
+closeNotification.addEventListener("click", closeAlert)
+
+console.log(alertTimerBarWidth)
