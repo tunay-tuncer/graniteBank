@@ -29,8 +29,10 @@ const colors = {
     orange2: "#F5A300"
 }
 
-
+let platinumCardCount = platinumContainer.childElementCount
+let goldContainerCardCount = goldContainer.childElementCount
 let theme = "dark"
+
 function switchTheme(){
     if(theme == "dark"){
         root.style.setProperty('--backgroundBlack', colors.backgroundWhite);
@@ -40,7 +42,6 @@ function switchTheme(){
         root.style.setProperty('--lightGray', colors.lightGrayLight);
 
         chart.updateOptions({
-          series: [70,5,5,5],
           legend: {
             labels: {colors: colors.textLight}
           }
@@ -57,7 +58,6 @@ function switchTheme(){
         root.style.setProperty('--lightGray', colors.lightGray);
 
         chart.updateOptions({
-          series: [44, 10, 5, 0],
           legend: {
             labels: {colors: colors.textWhite}
           }
@@ -69,7 +69,7 @@ function switchTheme(){
 
 
 var options = {
-    series: [44, 10, 5, 0],
+    series: [25, 7, 22, 15],
     chart: {
     width: 400,
     type: 'donut',
@@ -238,8 +238,7 @@ function createCard(){
 	}
 }
 
-let platinumCardCount = platinumContainer.childElementCount
-let goldContainerCardCount = goldContainer.childElementCount
+
 function addCardFunc(){
 	createCard()
   alert()
@@ -259,7 +258,7 @@ function closeAlert(){
 
 function alertTimer(){
   let alertTimerBarWidth  = alertTimerBar.offsetWidth;
-  alertTimerBar.style.animation = "alertBar 4s"
+  alertTimerBar.style.animation = "alertBar 3s "
   setTimeout(closeAlert, 3000);
 }
 
